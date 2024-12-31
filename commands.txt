@@ -1,5 +1,11 @@
-Active Windows (Powershell)
+-Active Windows (Powershell)
 irm https://massgrave.dev/get | iex
 
-Restore Microsoft Store, or other apps default from Windows (Powershell)
+-Restore Microsoft Store, or other apps default from Windows (Powershell)
 Get-AppxPackage -AllUsers| Foreach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
+
+-Many errors(cmd)
+sfc /scannow
+dism /online /cleanup-image /CheckHealth 
+dism /online /cleanup-image /restorehealth
+chkdsk /f /r /b
